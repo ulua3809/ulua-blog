@@ -435,7 +435,7 @@ RightMenus.fun = (() => {
     const NoticeRightMenu = localStorage.getItem('NoticeRightMenu') === 'true';
     if (RightMenus.messageRightMenu && !NoticeRightMenu)
       VolantisApp.message('右键菜单', '唤醒原系统菜单请使用：<kbd>Ctrl</kbd> + <kbd>右键</kbd>', {
-        icon: rightMenuConfig.options.iconPrefix + ' fa-exclamation-square red',
+        icon: rightMenuConfig.options.iconPrefix + ' fa-circle-exclamation red',
         displayMode: 1,
         time: 9000
       }, () => {
