@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://ulua3809.github.io/2024/03/22/k20p-unlock-lteband/"/>
+  <link rel="canonical" href="https://ulua3809.github.io/2024/03/30/archlinux-hyperland-install/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -47,22 +47,20 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>[转] 红米k20 pro 解锁全频段 - Ulua 3809 's blog</title>
-  <meta name="keywords" content="Android,redmi k20 pro,null">
+  <title>ArchLinux + Hyprland 基础安装教程 - Ulua 3809 's blog</title>
+  <meta name="keywords" content="null">
   <meta desc name="description" content="Ulua 3809 little blog - Ulua 3809 - Ulua 3809 's blog">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="[转] 红米k20 pro 解锁全频段">
-<meta property="og:url" content="https://ulua3809.github.io/2024/03/22/k20p-unlock-lteband/index.html">
+<meta property="og:title" content="ArchLinux + Hyprland 基础安装教程">
+<meta property="og:url" content="https://ulua3809.github.io/2024/03/30/archlinux-hyperland-install/index.html">
 <meta property="og:site_name" content="Ulua 3809 &#39;s blog">
-<meta property="og:description" content="手机开启diag端口已经root打开USB调试，打开cmd（默认你的电脑安装了adb和fastboot），手机已经root，输入  1234adb shellsusys.usb.config diag,adb# MIUI11的串口调试模式用*#*#717717#*#*打不开了，所以用上述的方法）  没有root（作者补充） 去网上找mi-diag.apk，安装到手机上 手机打开adb调试，连接电脑">
+<meta property="og:description" content="0. 准备设备 一个&gt;&#x3D;4g，质量好点的U盘 一台要安装archLinux的电脑 一台用来看教程，ssh连接的电脑（可选）  1. 准备安装镜像去archlinux官网下载镜像，推荐http直链下载，这里选择阿里云镜像，下载archlinux-[version]-x86_64.iso，下载后记得对比校验值 1. 校验安装镜像1. Linux下校验安装镜像从官网下载b2sums.tx">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2024-03-22T11:38:11.000Z">
-<meta property="article:modified_time" content="2024-03-22T12:36:34.676Z">
+<meta property="article:published_time" content="2024-03-30T06:53:27.000Z">
+<meta property="article:modified_time" content="2024-05-30T12:42:52.000Z">
 <meta property="article:author" content="Ulua 3809">
-<meta property="article:tag" content="Android">
-<meta property="article:tag" content="redmi k20 pro">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2530,7 +2528,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://ulua3809.github.io/2024/03/22/k20p-unlock-lteband/">
+  <link itemprop="mainEntityOfPage" href="https://ulua3809.github.io/2024/03/30/archlinux-hyperland-install/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ulua 3809 's blog">
   </span>
@@ -2551,7 +2549,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        [转] 红米k20 pro 解锁全频段
+        ArchLinux + Hyprland 基础安装教程
       </h1>
       <div class='new-meta-box'>
         
@@ -2560,7 +2558,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
   <a itemprop="url" class='author' href="/" rel="nofollow">
     <img itemprop="image" src="/nocdn/img/apple-touch-icon180x180.png" class="lazyload" data-srcset="/nocdn/img/apple-touch-icon180x180.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    <p itemprop="name">来自网络</p>
+    <p itemprop="name">Ulua 3809</p>
   </a>
 </div>
 
@@ -2568,34 +2566,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-  <div class='new-meta-item category'>
-    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="../../../../categories/%E6%89%8B%E6%9C%BA%E6%8A%98%E8%85%BE/">手机折腾</a>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="../../../../categories/%E6%89%8B%E6%9C%BA%E6%8A%98%E8%85%BE/" itemprop="url"><span itemprop="name">手机折腾</span></a>
-      </span>
-    
-  </div>
-
 
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-03-22T19:38:11+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-03-30T14:53:27+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2024年3月22日</p>
+    <p>发布于：2024年3月30日</p>
   </a>
 </div>
 
           
         
           
-            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-03-22T20:36:34+08:00">
+            <div class="new-meta-item date" itemprop="dateModified" datetime="2024-05-30T20:42:52+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2024年3月22日</p>
+    <p>更新于：2024年5月30日</p>
   </a>
 </div>
 
@@ -2613,13 +2601,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：449 字</p>
+      <p>字数：5.3k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1 分钟</p>
+      <p>时长：28 分钟</p>
     </a>
   </div>
 
@@ -2636,52 +2624,368 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="手机开启diag端口"><a href="#手机开启diag端口" class="headerlink" title="手机开启diag端口"></a>手机开启diag端口</h1><h2 id="已经root"><a href="#已经root" class="headerlink" title="已经root"></a>已经root</h2><p>打开USB调试，打开cmd（默认你的电脑安装了adb和fastboot），手机已经root，输入 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br><span class="line">su</span><br><span class="line">sys.usb.config diag,adb</span><br><span class="line"># MIUI11的串口调试模式用*#*#717717#*#*打不开了，所以用上述的方法）</span><br></pre></td></tr></table></figure>
+    <h1 id="0-准备设备"><a href="#0-准备设备" class="headerlink" title="0. 准备设备"></a>0. 准备设备</h1><ul>
+<li>一个&gt;&#x3D;4g，质量好点的U盘</li>
+<li>一台要安装archLinux的电脑</li>
+<li>一台用来看教程，ssh连接的电脑（可选）</li>
+</ul>
+<h1 id="1-准备安装镜像"><a href="#1-准备安装镜像" class="headerlink" title="1. 准备安装镜像"></a>1. 准备安装镜像</h1><p>去<a target="_blank" rel="noopener" href="https://archlinux.org/download/">archlinux官网</a>下载镜像，推荐http直链下载，这里选择阿里云镜像，下载<code>archlinux-[version]-x86_64.iso</code>，下载后记得对比校验值</p>
+<h2 id="1-校验安装镜像"><a href="#1-校验安装镜像" class="headerlink" title="1. 校验安装镜像"></a>1. 校验安装镜像</h2><h3 id="1-Linux下校验安装镜像"><a href="#1-Linux下校验安装镜像" class="headerlink" title="1. Linux下校验安装镜像"></a>1. Linux下校验安装镜像</h3><p>从官网下载b2sums.txt,放在安装包同路径，校验安装镜像</p>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">b2sum</span> -c b2sums.txt</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="没有root（作者补充）"><a href="#没有root（作者补充）" class="headerlink" title="没有root（作者补充）"></a>没有root（作者补充）</h2><ol>
-<li>去网上找<code>mi-diag.apk</code>，安装到手机上</li>
-<li>手机打开adb调试，连接电脑</li>
-<li>输入以下命令</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell &quot;am start -n com.longcheertel.midtest/&quot;</span><br><span class="line">adb shell &quot;am start -n com.longcheertel.midtest/com.longcheertel.midtest.Diag&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="2-windows下校验安装镜像"><a href="#2-windows下校验安装镜像" class="headerlink" title="2. windows下校验安装镜像"></a>2. windows下校验安装镜像</h3><p>打开powershell 对比sha256</p>
+   <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-FileHash</span> <span class="literal">-Path</span> path\to\archlinux-[<span class="type">version</span>]<span class="literal">-x86_64</span>.iso <span class="literal">-Algorithm</span> SHA256</span><br></pre></td></tr></table></figure>
 
-<ol start="4">
-<li>查看设备管理器，应该出现901D端口</li>
-</ol>
-<h1 id="电脑安装驱动"><a href="#电脑安装驱动" class="headerlink" title="电脑安装驱动"></a>电脑安装驱动</h1><p>从小米官网上下载Miflash</p>
-<p>驱动在miflash 文件夹下：<code>MiFlash2018-5-28-0\Source\ThirdParty\Qualcomm\Driver\qcser.inf</code>右键安装</p>
-<p>驱动安装好后的截图如下，COM口是随机的，可能与我截图中的不一样，没关系</p>
-<p><img src="image-20240322195559087.png" class="lazyload" data-srcset="image-20240322195559087.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240322195559087"></p>
-<p>打开QPST Configuration（安装好后在你的开始菜单中），检查能不能识别手机</p>
-<p>打开后的截图如下</p>
-<p><img src="image-20240322195944850.png" class="lazyload" data-srcset="image-20240322195944850.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240322195944850"></p>
-<h1 id="QXDM解锁频段"><a href="#QXDM解锁频段" class="headerlink" title="QXDM解锁频段"></a>QXDM解锁频段</h1><p>打开QXDM，接下来的操作如下一系列的图，点击截图中用红线画圈的地方</p>
-<ol>
-<li><p><img src="image-20240322200256216.png" class="lazyload" data-srcset="image-20240322200256216.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240322200256216"></p>
-</li>
-<li></li>
-</ol>
-<p><img src="image-20240322200316968.png" class="lazyload" data-srcset="image-20240322200316968.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240322200316968"></p>
-<p>3. </p>
-<p><img src="image-20240322200328450.png" class="lazyload" data-srcset="image-20240322200328450.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240322200328450"></p>
-<p>4. </p>
-<p><img src="image-20240322200337333.png" class="lazyload" data-srcset="image-20240322200337333.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240322200337333"></p>
-<p>找到<code>ID</code>栏<code>06828</code>对应<code>description</code>的<code>LTE_BC_CONFIG</code>,点击<code>input</code>下的框，输入<code>17592185995263</code>，然后点击<code>write</code>，全部完成。</p>
-<ol start="5">
-<li></li>
-</ol>
-<p><img src="image-20240322200412683.png" class="lazyload" data-srcset="image-20240322200412683.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240322200412683"></p>
-<h1 id="数值计算"><a href="#数值计算" class="headerlink" title="数值计算"></a>数值计算</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">41                ---&gt;                            1</span><br><span class="line">1 1110 0010 0000 0000 0000 0000 0000 0000 1101 0101</span><br></pre></td></tr></table></figure>
+<p>验证无误后，Windows端可以用<a target="_blank" rel="noopener" href="https://github.com/pbatard/rufus">rufus</a>（记得从可信的来源下载）</p>
+<p>写入镜像，如果默认的iso模式不行的话，记得选择dd模式</p>
+<p>Linux端可以直接用<code>dd</code>写入，记得不要选择分区</p>
+<blockquote>
+<p>注意 ：U盘上的所有数据（包括分区表）都会被删除，操作前记得备份数据，</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">dd</span> bs=4M <span class="keyword">if</span>=path/to/archlinux-[version]-x86_64.iso of=/dev/disk/by-id/usb-My_flash_drive conv=fsync oflag=direct status=progress</span></span><br></pre></td></tr></table></figure>
 
-<p>k20p 默认频段值2070174236885，即B1 B3 B5 B7 B8 B34 B38 B39 B40 B41 </p>
-<p>全LTE 频段 十进制数：17592185995263</p>
-<p>NV值是十进制数，转化为二进制，就是对应二进制每一位，比如下面，总共41位数的二进制</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">41                ---&gt;                            1</span><br><span class="line">1 0000 0010 0000 0000 0000 0000 0000 0000 0000 0001</span><br></pre></td></tr></table></figure>
+<h2 id="2-启动archlivecd"><a href="#2-启动archlivecd" class="headerlink" title="2. 启动archlivecd"></a>2. 启动archlivecd</h2><p>进入电脑bios，关闭安全启动，开启UEFI启动，关闭CSM，插上U盘，启动U盘上的启动项</p>
+<h1 id="2-准备安装环境"><a href="#2-准备安装环境" class="headerlink" title="2. 准备安装环境"></a>2. 准备安装环境</h1><h2 id="0-关闭TTY自动补全声音"><a href="#0-关闭TTY自动补全声音" class="headerlink" title="0. 关闭TTY自动补全声音"></a>0. 关闭TTY自动补全声音</h2><p>如果你不想在按tab自动补全的时候发出bibi的声音，可以试着在终端里面输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setterm --blength 0</span><br></pre></td></tr></table></figure>
 
-<p>代表的意思就是对应打开的 B41 B1频段，然后用win7自带的计算器，把上述二进制转化为十进制 就是对应的<code>LTE_BC_CONFIG</code>的相应频段的数值</p>
-<p>上述的数值为</p>
-<p><img src="image-20240322200535652.png" class="lazyload" data-srcset="image-20240322200535652.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240322200535652"></p>
+<h2 id="1-配置网络"><a href="#1-配置网络" class="headerlink" title="1. 配置网络"></a>1. 配置网络</h2><blockquote>
+<p>推荐这一部分去ArchWiki上看，可能会随时间变化而变化</p>
+</blockquote>
+<h3 id="1-有线连接"><a href="#1-有线连接" class="headerlink" title="1. 有线连接"></a>1. 有线连接</h3><p>如果你用网线连上了带DHCP的路由器，那么网络大概率是正常的，不需要特别的设置</p>
+<h3 id="2-无线连接"><a href="#2-无线连接" class="headerlink" title="2. 无线连接"></a>2. 无线连接</h3><ol>
+<li>先用<code>rfkill</code>取消屏蔽无线网卡</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rfkill unblock wlan</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>使用<code>iwctl</code>连接网络</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iwctl</span><br></pre></td></tr></table></figure>
+
+<p>列出网卡</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[iwd]# device list</span><br></pre></td></tr></table></figure>
+
+<p>开启对应无线网卡</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[iwd]# device [name] set-property Powered on</span><br></pre></td></tr></table></figure>
+
+<p>扫描无线网络</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[iwd]# station [name] scan</span><br></pre></td></tr></table></figure>
+
+<p>列出无线网络</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[iwd]# station [name] get-networks</span><br></pre></td></tr></table></figure>
+
+<p>连接上wifi</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[iwd]# station [name] connect [SSID]</span><br></pre></td></tr></table></figure>
+
+<p>测试网络连接是否正常</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-配置ssh（可选）"><a href="#2-配置ssh（可选）" class="headerlink" title="2. 配置ssh（可选）"></a>2. 配置ssh（可选）</h2><p>推荐在局域网内用ssh连上要安装的机器，你也不想用tty敲命令吧</p>
+<p>优点：</p>
+<ul>
+<li>可以直接复制命令</li>
+<li>没有bibi的蜂鸣器的声音</li>
+</ul>
+<p>目标机：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">passwd <span class="comment">#设置一个复杂点的密码，防止内网里有设备搞事情</span></span><br><span class="line">nano /etc/ssh/sshd_config</span><br><span class="line"><span class="comment"># 找到 PermitRootLogin 取消注释，改成 PermitRootLogin yes</span></span><br><span class="line"><span class="comment"># 取消 #Port 22 的注释，改成大一点的端口（别超过65535），减少被扫到的概率</span></span><br><span class="line">systemctl reload sshd.service <span class="comment">#应用新的ssh配置</span></span><br><span class="line">ip addr <span class="comment">#获取内网ip</span></span><br></pre></td></tr></table></figure>
+
+<p>本地机器：</p>
+<p>windows自带ssh</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="literal">-o</span> StrictHostKeyChecking=no <span class="literal">-o</span> UserKnownHostsFile=/dev/null root<span class="selector-tag">@</span>[<span class="type">ip.address.of.target</span>] <span class="literal">-p</span> [<span class="type">port</span>]</span><br></pre></td></tr></table></figure>
+
+<p>非linux设备可以吧<code>/dev/null</code>换成临时目录，用完后删除，防止认证失败，接下来的步骤都在ssh上进行</p>
+<h2 id="3-更新系统时间"><a href="#3-更新系统时间" class="headerlink" title="3. 更新系统时间"></a>3. 更新系统时间</h2><p>从NTP更新系统时间</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">timedatectl set-ntp true</span><br><span class="line">timedatectl status</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-磁盘分区"><a href="#4-磁盘分区" class="headerlink" title="4. 磁盘分区"></a>4. 磁盘分区</h2><h3 id="1-使用fdisk-分区-推荐提前用diskgenius分好区"><a href="#1-使用fdisk-分区-推荐提前用diskgenius分好区" class="headerlink" title="1. 使用fdisk 分区(推荐提前用diskgenius分好区)"></a>1. 使用fdisk 分区(推荐提前用diskgenius分好区)</h3><p>使用下面命令来查看所有磁盘</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">fdisk -l</span><br><span class="line">--------------------------------------</span><br><span class="line">Disk /dev/nvme1n1：953.87 GiB，1024209543168 字节，2000409264 个扇区</span><br><span class="line">磁盘型号：ZHITAI TiPlus7100 1TB                   </span><br><span class="line">单元：扇区 / 1 * 512 = 512 字节</span><br><span class="line">扇区大小(逻辑/物理)：512 字节 / 512 字节</span><br><span class="line">I/O 大小(最小/最佳)：512 字节 / 512 字节</span><br><span class="line">磁盘标签类型：gpt</span><br><span class="line">磁盘标识符：B587D57D-F0B4-4609-9C27-D4D5949FD8DF</span><br><span class="line"></span><br><span class="line">设备                 起点       末尾       扇区   大小 类型</span><br><span class="line">/dev/nvme1n1p1         40     262183     262144   128M EFI 系统</span><br><span class="line">/dev/nvme1n1p2     526336 1332382153 1331855818 635.1G Linux root (x86-64)</span><br><span class="line">/dev/nvme1n1p3 1332382160 2000409230  668027071 318.5G Microsoft 基本数据</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Disk /dev/nvme0n1：953.87 GiB，1024209543168 字节，2000409264 个扇区</span><br><span class="line">磁盘型号：SAMSUNG MZVL21T0HCLR-00BL2              </span><br><span class="line">单元：扇区 / 1 * 512 = 512 字节</span><br><span class="line">扇区大小(逻辑/物理)：512 字节 / 512 字节</span><br><span class="line">I/O 大小(最小/最佳)：512 字节 / 512 字节</span><br><span class="line">磁盘标签类型：gpt</span><br><span class="line">磁盘标识符：F2F9B7E8-C3FD-4625-830A-83FE0F871DF1</span><br><span class="line"></span><br><span class="line">设备                 起点       末尾      扇区   大小 类型</span><br><span class="line">/dev/nvme0n1p1       2048     264191    262144   128M EFI 系统</span><br><span class="line">/dev/nvme0n1p2     264192  667160575 666896384   318G Microsoft 基本数据</span><br><span class="line">/dev/nvme0n1p3  667160576 1331959807 664799232   317G Microsoft 基本数据</span><br><span class="line">/dev/nvme0n1p4 1331959808 2000408575 668448768 318.7G Microsoft 基本数据</span><br><span class="line">--------------------------------------</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">分区uuid</span></span><br><span class="line">ls -al /dev/disk/by-partuuid</span><br><span class="line">--------------------------------------</span><br><span class="line">总计 0</span><br><span class="line">drwxr-xr-x 2 root root 180  4月 7日 20:42 .</span><br><span class="line">drwxr-xr-x 9 root root 180  4月 7日 20:42 ..</span><br><span class="line">lrwxrwxrwx 1 root root  15  4月 7日 20:42 2cb4a7fb-3037-bd49-ae62-a3ac68cf955d -&gt; ../../nvme1n1p3</span><br><span class="line">lrwxrwxrwx 1 root root  15  4月 7日 20:42 8430ed60-01d2-4ab6-bd8f-97e749707629 -&gt; ../../nvme0n1p1</span><br><span class="line">lrwxrwxrwx 1 root root  15  4月 7日 20:42 85ff656d-6c8c-460f-89a1-0ca4792c9b3f -&gt; ../../nvme0n1p2</span><br><span class="line">lrwxrwxrwx 1 root root  15  4月 7日 20:42 86c04808-dc14-411f-9d3e-1f9482ba7fc0 -&gt; ../../nvme0n1p4</span><br><span class="line">lrwxrwxrwx 1 root root  15  4月 7日 20:42 882d6bae-af8a-494f-9f84-e6ddc6656542 -&gt; ../../nvme1n1p1</span><br><span class="line">lrwxrwxrwx 1 root root  15  4月 7日 20:42 ba6bfaa6-51f9-e243-a2df-c41564e6ddff -&gt; ../../nvme1n1p2</span><br><span class="line">lrwxrwxrwx 1 root root  15  4月 7日 20:42 ef1f7f14-1471-4ea5-a365-14b47a409d17 -&gt; ../../nvme0n1p3</span><br><span class="line">--------------------------------------</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">文件系统uuid，未格式化前是没有的</span></span><br><span class="line">ls -al /dev/disk/by-uuid</span><br><span class="line">--------------------------------------</span><br><span class="line">总计 0</span><br><span class="line">drwxr-xr-x 2 root root 180  4月 7日 20:42 .</span><br><span class="line">drwxr-xr-x 9 root root 180  4月 7日 20:42 ..</span><br><span class="line">lrwxrwxrwx 1 root root  15  4月 7日 20:42 33A4FFD526A3B6D6 -&gt; ../../nvme0n1p4</span><br><span class="line">lrwxrwxrwx 1 root root  15  4月 7日 20:42 37B87456AE73BE06 -&gt; ../../nvme0n1p2</span><br><span class="line">lrwxrwxrwx 1 root root  15  4月 7日 20:42 59d48731-0973-415d-a7e6-ef5f5bbfecdb -&gt; ../../nvme1n1p2</span><br><span class="line">lrwxrwxrwx 1 root root  15  4月 7日 20:42 59E5-B16B -&gt; ../../nvme1n1p1</span><br><span class="line">lrwxrwxrwx 1 root root  15  4月 7日 20:42 75B0822292E1CC0A -&gt; ../../nvme1n1p3</span><br><span class="line">lrwxrwxrwx 1 root root  15  4月 7日 20:42 7712-0909 -&gt; ../../nvme0n1p1</span><br><span class="line">lrwxrwxrwx 1 root root  15  4月 7日 20:42 A95AFC3AEF3ED18D -&gt; ../../nvme0n1p3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>linux常用分区参数，推荐使用表上的<code>Partition type GUID</code>，非强制性</p>
+<blockquote>
+<p>GPT分区表会占用前34逻辑块(LBA0~LBA33)，后33个逻辑块(LBA-33~LBA-1)，实际分区可用空间为(LBA34~LBA-34)</p>
+</blockquote>
+<p>sgdisk查看分区信息：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sgdisk -i partnum</span><br></pre></td></tr></table></figure>
+
+<p>sgdisk修改分区类型GUID：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sgdisk --typecode=partnum:&#123;hexcode|GUID&#125;</span><br></pre></td></tr></table></figure>
+
+<p>sgdisk修改分区GUID（用来识别分区）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sgdisk --partition-guid=partnum:guid</span><br></pre></td></tr></table></figure>
+
+<p><code>guid</code>填入<code>R</code>用来随机GUID</p>
+<p>sgdisk修改分区名（不是文件系统卷标）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sgdisk --change-name=partnum:name</span><br></pre></td></tr></table></figure>
+
+<p>manpage 上写了，可以设置中文名称，不过不推荐</p>
+<blockquote>
+<p>This name is encoded as a UTF-16 string, but proper entry and display of anything beyond basic ASCII values requires suitable locale and font support. For the most part, Linux ignores the partition name, but it may be important in some OSes. If you want to set a name that includes a space, enclose it in quotation marks, as in <em>sgdisk -c 1:”Sample Name” &#x2F;dev&#x2F;sdb</em>. Note that the GPT name of a partition is distinct from the filesystem name, which is encoded in the filesystem’s data structures.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">分区类型</th>
+<th><strong>挂载点</strong></th>
+<th><strong>gdisk’s code</strong></th>
+<th>Partition type GUID</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Linux filesystem</td>
+<td>Any</td>
+<td>8300</td>
+<td>0FC63DAF-8483-4772-8E79-3D69D8477DE4</td>
+</tr>
+<tr>
+<td align="left">EFI system partition</td>
+<td>Any</td>
+<td>ef00</td>
+<td>C12A7328-F81F-11D2-BA4B-00A0C93EC93B</td>
+</tr>
+<tr>
+<td align="left">BIOS boot partition</td>
+<td>None</td>
+<td>ef02</td>
+<td>21686148-6449-6E6F-744E-656564454649</td>
+</tr>
+<tr>
+<td align="left">XBOOTLDR partition</td>
+<td>Any</td>
+<td>ea00</td>
+<td>BC13C2FF-59E6-4262-A352-B275FD6F7172</td>
+</tr>
+<tr>
+<td align="left">Linux x86-64 root (&#x2F;)</td>
+<td>&#x2F;</td>
+<td>8304</td>
+<td>4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709</td>
+</tr>
+<tr>
+<td align="left">Linux swap</td>
+<td>[SWAP]</td>
+<td>8200</td>
+<td>0657FD6D-A4AB-43C4-84E5-0933C84B4F4F</td>
+</tr>
+<tr>
+<td align="left">Linux &#x2F;home</td>
+<td>&#x2F;home</td>
+<td>8302</td>
+<td>933AC7E1-2EB4-4F13-B844-0E14E2AEF915</td>
+</tr>
+<tr>
+<td align="left">Linux &#x2F;srv</td>
+<td>&#x2F;srv</td>
+<td>8306</td>
+<td>3B8F8425-20E0-4F3B-907F-1A25A76F98E8</td>
+</tr>
+<tr>
+<td align="left">Linux &#x2F;var</td>
+<td>&#x2F;var</td>
+<td>8310</td>
+<td>4D21B016-B534-45C2-A9FB-5C16E091FD2D</td>
+</tr>
+<tr>
+<td align="left">Linux &#x2F;var&#x2F;tmp</td>
+<td>&#x2F;var&#x2F;tmp</td>
+<td>8311</td>
+<td>7EC6F557-3BC5-4ACA-B293-16EF5DF639D1</td>
+</tr>
+<tr>
+<td align="left">Linux LVM</td>
+<td>Any</td>
+<td>8e00</td>
+<td>E6D6D379-F507-44C2-A23C-238F2A3DF928</td>
+</tr>
+<tr>
+<td align="left">Linux RAID</td>
+<td>Any</td>
+<td>fd00</td>
+<td>A19D880F-05FC-4D3B-A006-743F0F84911E</td>
+</tr>
+<tr>
+<td align="left">Linux LUKS</td>
+<td>Any</td>
+<td>8309</td>
+<td>CA7D7CCB-63ED-4C53-861C-1742536059CC</td>
+</tr>
+<tr>
+<td align="left">Linux dm-crypt</td>
+<td>Any</td>
+<td>8308</td>
+<td>7FFEC5C9-2D00-49B7-8941-3EA10A5586B7</td>
+</tr>
+</tbody></table>
+<h3 id="2-格式化分区"><a href="#2-格式化分区" class="headerlink" title="2. 格式化分区"></a>2. 格式化分区</h3><p>这里采用BTRFS分区方案：</p>
+<h4 id="1-格式化btrfs"><a href="#1-格式化btrfs" class="headerlink" title="1. 格式化btrfs"></a>1. 格式化btrfs</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.btrfs -L mylabel /dev/partition</span><br></pre></td></tr></table></figure>
+
+<p><code>mylabel</code>为文件系统卷标</p>
+<h4 id="2-创建btrfs子卷"><a href="#2-创建btrfs子卷" class="headerlink" title="2. 创建btrfs子卷"></a>2. 创建btrfs子卷</h4><p>先挂载btrfs主分区</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/partition /mnt</span><br></pre></td></tr></table></figure>
+
+<p>这里我们需要创建四个子卷</p>
+<table>
+<thead>
+<tr>
+<th align="left">子卷名</th>
+<th>挂载点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">@</td>
+<td>&#x2F;</td>
+</tr>
+<tr>
+<td align="left">@home</td>
+<td>&#x2F;home</td>
+</tr>
+<tr>
+<td align="left">@var</td>
+<td>&#x2F;var</td>
+</tr>
+<tr>
+<td align="left">@cache</td>
+<td>&#x2F;var&#x2F;cache&#x2F;</td>
+</tr>
+<tr>
+<td align="left">@swap</td>
+<td>&#x2F;swap（其他位置也可以）</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>大内存机子就不用创建swap了， 当然，如果后续需要可以直接创建，这就是btrfs的优势，可以把子卷看成一个文件系统</p>
+<p>使用@开头是为了使用timeshift管理快照</p>
+</blockquote>
+<p>使用下面命令创建子卷</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">btrfs subvolume create /mnt/name</span><br></pre></td></tr></table></figure>
+
+<p>创建完swap子卷后，使用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">btrfs filesystem mkswapfile --size 4g --uuid clear /mnt/@swap/swapfile</span><br></pre></td></tr></table></figure>
+
+<p>来创建swap文件，可已自由设置swap大小，注意<strong>先不要启用swap</strong></p>
+<p>设置默认子卷为@，防止挂载时可能会产生的问题</p>
+<blockquote>
+<p>如果你要使用快照软件，类似snapper，或者timeshift，不要设置默认子卷</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">btrfs subvolume set-default subvolume-id /mnt</span><br></pre></td></tr></table></figure>
+
+<p><code>subvolume-id</code>可以使用<code>btrfs subvolume list -p path</code>来查看</p>
+<p>卸载主分区</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">umount /mnt</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-格式化EFI启动分区"><a href="#3-格式化EFI启动分区" class="headerlink" title="3. 格式化EFI启动分区"></a>3. 格式化EFI启动分区</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.fat -F 32 -n VOLUME-NAME /dev/efi_system_partition</span><br></pre></td></tr></table></figure>
+
+<p><code>VOLUME-NAME</code>是分区卷标，可以自己取，不推荐中文</p>
+<h3 id="3-挂载分区"><a href="#3-挂载分区" class="headerlink" title="3. 挂载分区"></a>3. 挂载分区</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mount -o compress=no,subvol=@ /dev/partition /mnt #根目录不压缩</span><br><span class="line">mount -o compress=zstd,subvol=@home /dev/partition /mnt/home --mkdir</span><br><span class="line">mount -o compress=zstd,subvol=@cache /dev/partition /mnt/var/cache --mkdir</span><br><span class="line">mount -o compress=no,subvol=@swap /dev/partition /mnt/swap --mkdir #swap也不压缩</span><br><span class="line">swapon /mnt/swap/swapfile</span><br><span class="line">mount /dev/efi_system_partition /efi  --mkdir #务必挂载上，不然后面refind可能识别不出</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-开始安装"><a href="#3-开始安装" class="headerlink" title="3. 开始安装"></a>3. 开始安装</h1><h3 id="1-更新镜像源"><a href="#1-更新镜像源" class="headerlink" title="1. 更新镜像源"></a>1. 更新镜像源</h3><p>访问<a target="_blank" rel="noopener" href="https://archlinux.org/mirrorlist/">Pacman Mirrorlist Generator</a>，点击生成</p>
+<p>清空原镜像列表</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;&quot; &gt; /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure>
+
+<p>nano编辑镜像列表</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/pacman.d/mirrorlist</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">复制进来生成的内容，然后取消国内镜像源的注释</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">先不要急着添加archlinuxcn的源</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-使用pacstrap安装基础包"><a href="#2-使用pacstrap安装基础包" class="headerlink" title="2. 使用pacstrap安装基础包"></a>2. 使用pacstrap安装基础包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacstrap -K /mnt base linux-firmware amd-ucode nano btrfs-progs networkmanager rp-pppoe man-db man-pages texinfo</span><br></pre></td></tr></table></figure>
+
+<p>这里推荐使用<a target="_blank" rel="noopener" href="https://github.com/archlinuxcn/repo/tree/master/archlinuxcn/linux-lily">linux-lily</a>内核，所以先别装官方内核</p>
+<blockquote>
+<p>一些要装的基础软件包：</p>
+<ul>
+<li>CPU <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Microcode">microcode</a> updates—<a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=amd-ucode">amd-ucode</a> or <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=intel-ucode">intel-ucode</a>—for hardware bug and security fixes,</li>
+<li><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/File_systems">userspace utilities for file systems</a> that will be used on the system—for the purposes of e.g. file system creation and <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Fsck">fsck</a>,</li>
+<li>utilities for accessing and managing <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/RAID#Installation">RAID</a> or <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/LVM#Installation">LVM</a> if they will be used on the system,</li>
+<li>specific firmware for other devices not included in <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=linux-firmware">linux-firmware</a> (e.g. <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=sof-firmware">sof-firmware</a> for <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#ALSA_firmware">onboard audio</a>, <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=linux-firmware-marvell">linux-firmware-marvell</a> for Marvell wireless and any of the multiple firmware packages for <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Broadcom_wireless">Broadcom wireless</a>),</li>
+<li>software necessary for <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Networking">networking</a> (e.g. <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Network_configuration#Network_managers">a network manager or a standalone DHCP client</a>, <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Network_configuration/Wireless#Authentication">authentication software</a> for Wi-Fi, <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/ModemManager">ModemManager</a> for mobile broadband connections),</li>
+<li>a <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Text_editor">text editor</a>,</li>
+<li>packages for accessing documentation in <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Man">man</a> and <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Info">info</a> pages: <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=man-db">man-db</a>, <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=man-pages">man-pages</a> and <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=texinfo">texinfo</a>.</li>
+</ul>
+</blockquote>
+<h3 id="3-生成fstab"><a href="#3-生成fstab" class="headerlink" title="3. 生成fstab"></a>3. 生成fstab</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改/mnt/etc/fstab</span></span><br><span class="line">nano /mnt/etc/fstab</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">去除@子卷subvolid，将一些不压缩的分区compression设置成no</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-chroot进新系统"><a href="#4-chroot进新系统" class="headerlink" title="4. chroot进新系统"></a>4. chroot进新系统</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-设置时区"><a href="#1-设置时区" class="headerlink" title="1. 设置时区"></a>1. 设置时区</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-同步BIOS时钟"><a href="#2-同步BIOS时钟" class="headerlink" title="2. 同步BIOS时钟"></a>2. 同步BIOS时钟</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hwclock --systohc</span><br></pre></td></tr></table></figure>
+
+<p>有和Windows双系统的话记得装完系统后修改windows的注册表</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg add <span class="string">&quot;HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation&quot;</span> /v RealTimeIsUniversal /d <span class="number">1</span> /t REG_DWORD /f</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-配置区域"><a href="#3-配置区域" class="headerlink" title="3. 配置区域"></a>3. 配置区域</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/locale.gen</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">取消下面的注释</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">en_US.UTF-8 UTF-8</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">zh_CN.UTF-8 UTF-8</span> </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">zh_HK.UTF-8 UTF-8</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">zh_TW.UTF-8 UTF-8</span></span><br></pre></td></tr></table></figure>
+
+<p>生成地区</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locale-gen</span><br></pre></td></tr></table></figure>
+
+<p>设定语言变量</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/locale.conf</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">输入下面内容</span></span><br><span class="line">LANG=zh_CN.UTF-8</span><br><span class="line">LANGUAGE=zh_CN:zh_HK:zh_TW:en_US:C</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-设置主机名"><a href="#4-设置主机名" class="headerlink" title="4. 设置主机名"></a>4. 设置主机名</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;yourname&quot; &gt; /etc/hostname</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-添加archLinuxcn源"><a href="#5-添加archLinuxcn源" class="headerlink" title="5. 添加archLinuxcn源"></a>5. 添加archLinuxcn源</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/pacman.conf</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">添加</span></span><br><span class="line">[archlinuxcn]</span><br><span class="line">Server = https://repo.archlinuxcn.org/$arch</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">取消multilib源的注释</span></span><br><span class="line">[multilib]</span><br><span class="line">Include = /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure>
+
+<p>更新数据库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -Sy</span><br></pre></td></tr></table></figure>
+
+<p>安装archlinuxcn密钥链</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman-key --lsign-key &quot;farseerfc@archlinux.org&quot;</span><br><span class="line">pacman -S archlinuxcn-keyring</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-安装基础软件"><a href="#6-安装基础软件" class="headerlink" title="6. 安装基础软件"></a>6. 安装基础软件</h4><p>安装内核，zsh,paru,btrfs-assit</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S linux-lily zsh paru sudo base-devel snapper fastfetch fd htop p7zip</span><br></pre></td></tr></table></figure>
+
+<p>安装一些可选依赖</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S --asdeps zsh-autosuggestions zsh-syntax-highlighting zsh-completions</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="7-安装bootloader"><a href="#7-安装bootloader" class="headerlink" title="7. 安装bootloader"></a>7. 安装bootloader</h4><p>这里用refind，先安装refind</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S refind</span><br></pre></td></tr></table></figure>
+
+<p>安装refind到系统ESP</p>
+<blockquote>
+<p>注意：双盘双系统用户一定要先正确挂载EFI分区，否则refind可能会安装到另一块硬盘上</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">refind-install</span><br></pre></td></tr></table></figure>
+
+<p>修改refind配置，适配btrfs</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">nano /efi/EFI/refind/refind.conf</span><br><span class="line"># 找到menuentry &quot;Arch Linux&quot; 修改以下内容</span><br><span class="line">menuentry &quot;Arch Linux Lily&quot; &#123;</span><br><span class="line">    icon     /EFI/refind/icons/os_arch.png</span><br><span class="line">    volume   &quot;ba6bfaa6-51f9-e243-a2df-c41564e6ddff&quot;</span><br><span class="line">    loader   /@/boot/vmlinuz-linux-lily</span><br><span class="line">    initrd   /@/boot/amd-ucode.img</span><br><span class="line">    initrd   /@/boot/initramfs-linux-lily.img</span><br><span class="line">    options  &quot;root=PARTUUID=ba6bfaa6-51f9-e243-a2df-c41564e6ddff rw rootflags=subvol=@ add_efi_memmap&quot;</span><br><span class="line">    submenuentry &quot;Boot using fallback initramfs&quot; &#123;</span><br><span class="line">        initrd /@/boot/amd-ucode.img</span><br><span class="line">        initrd /@/boot/initramfs-linux-lily-fallback.img</span><br><span class="line">    &#125;</span><br><span class="line">    submenuentry &quot;Boot to terminal&quot; &#123;</span><br><span class="line">        add_options &quot;systemd.unit=multi-user.target&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"># 记得去掉disabled</span><br><span class="line"># 修复自动检测启动问题</span><br><span class="line">nano /boot/refind_linux.conf</span><br><span class="line"></span><br><span class="line">&quot;Boot with standard options&quot;  &quot;root=PARTUUID=ba6bfaa6-51f9-e243-a2df-c41564e6ddff rw rootflags=subvol=@ add_efi_memmap initrd=@\boot\amd-ucode.img initrd=@\boot\initramfs-linux-lily.img&quot;</span><br><span class="line">&quot;Boot to single-user mode&quot;    &quot;root=PARTUUID=ba6bfaa6-51f9-e243-a2df-c41564e6ddff rw rootflags=subvol=@ add_efi_memmap initrd=@\boot\amd-ucode.img initrd=@\boot\initramfs-linux-lily.img single&quot;</span><br><span class="line">&quot;Boot with fallback initramfs&quot;   &quot;root=PARTUUID=ba6bfaa6-51f9-e243-a2df-c41564e6ddff rw rootflags=subvol=@ add_efi_memmap initrd=@\boot\amd-ucode.img initrd=@\boot\initramfs-linux-lily-fallback.img&quot;</span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li>创建普通用户</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">useradd -m -G wheel -s /bin/zsh ulua</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">记得设置root 密码</span></span><br><span class="line">passwd</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">用户密码</span></span><br><span class="line">passwd ulua</span><br></pre></td></tr></table></figure>
+
+<p>修改sudoers文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/sudoers</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">取消下面行的注释</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">%wheel ALL=(ALL:ALL) ALL</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="9-配置zsh"><a href="#9-配置zsh" class="headerlink" title="9. 配置zsh"></a>9. 配置zsh</h4><p>安装<code>powerlevel10k</code>，和<code>zsh-autocomplete</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">powerlevel10k</span></span><br><span class="line">git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.zshplugin/powerlevel10k</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">中国镜像加速</span></span><br><span class="line">git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ~/.zshplugin/powerlevel10k</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">zsh-autocomplete</span></span><br><span class="line">git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~/.zshplugin/zsh-autocomplete</span><br></pre></td></tr></table></figure>
+
+<p>配置zsh，可以给root也配置一份</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">su ulua #切换到非root用户，配置完后修改.zshrc,添加</span><br><span class="line">bindkey &quot;^[[1;5C&quot; forward-word</span><br><span class="line">bindkey &quot;^[[1;5D&quot; backward-word</span><br><span class="line">bindkey &quot;^H&quot; backward-delete-word</span><br><span class="line">bindkey &quot;^[[3;5~&quot; kill-word</span><br><span class="line">zstyle :compinstall filename &#x27;/home/ulua/.zshrc&#x27;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">add slash to word <span class="built_in">split</span></span></span><br><span class="line">WORDCHARS=$&#123;WORDCHARS/\/&#125;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">export</span> GTK_IM_MODULE=fcitx</span></span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=@im=fcitx</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">load plugings</span></span><br><span class="line">source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh</span><br><span class="line">source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</span><br><span class="line">source ~/.zshplugin/powerlevel10k/powerlevel10k.zsh-theme</span><br><span class="line">source ~/.zshplugin/zsh-autocomplete/zsh-autocomplete.plugin.zsh</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.</span></span><br><span class="line">[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh</span><br></pre></td></tr></table></figure>
+
+<p>为root配置zsh</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su</span><br><span class="line">chsh -s $(which zsh)</span><br></pre></td></tr></table></figure>
+
+<p>到这里，基础的安装就完成了，可以重启系统，然后用tty登录了，如果想安装图形界面，可以先不重启</p>
+<h1 id="4-安装hyprland"><a href="#4-安装hyprland" class="headerlink" title="4. 安装hyprland"></a>4. 安装hyprland</h1><p>安装hyprland和需要的软件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S hyprland kitty thunar</span><br></pre></td></tr></table></figure>
+
+<p>安装thunar插件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S --asdeps gvfs thunar-archive-plugin thunar-volman xarchiver</span><br></pre></td></tr></table></figure>
+
+<p>安装字体</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-jetbrains-mono-nerd</span><br><span class="line">paru -S ttf-lxgw-wenkai-screen</span><br></pre></td></tr></table></figure>
+
+<p>如果你想用霞鹜文楷，可以在<code>/etc/fontconfig</code>中新建文件<code>65-lxgwwenkai-priority.conf</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span>?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">fontconfig</span> <span class="keyword">SYSTEM</span> <span class="string">&quot;urn:fontconfig:fonts.dtd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">fontconfig</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">match</span> <span class="attr">target</span>=<span class="string">&quot;pattern&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;lang&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>ja<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>serif<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;edit name=&quot;family&quot; mode=&quot;prepend&quot; binding=&quot;strong&quot;&gt;</span></span><br><span class="line"><span class="comment">            &lt;string&gt;JetBrainsMonoNL Nerd Font Propo&lt;/string&gt;</span></span><br><span class="line"><span class="comment">        &lt;/edit&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>LXGW WenKai GB Screen<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>Noto Serif CJK JP<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">match</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">match</span> <span class="attr">target</span>=<span class="string">&quot;pattern&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;lang&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>ko<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>serif<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;edit name=&quot;family&quot; mode=&quot;prepend&quot; binding=&quot;strong&quot;&gt;</span></span><br><span class="line"><span class="comment">            &lt;string&gt;JetBrainsMonoNL Nerd Font Propo&lt;/string&gt;</span></span><br><span class="line"><span class="comment">        &lt;/edit&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>LXGW WenKai GB Screen<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>Noto Serif CJK KR<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">match</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">match</span> <span class="attr">target</span>=<span class="string">&quot;pattern&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;lang&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>zh-cn<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>serif<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;edit name=&quot;family&quot; mode=&quot;prepend&quot; binding=&quot;strong&quot;&gt;</span></span><br><span class="line"><span class="comment">            &lt;string&gt;JetBrainsMonoNL Nerd Font Propo&lt;/string&gt;</span></span><br><span class="line"><span class="comment">        &lt;/edit&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>LXGW WenKai GB Screen<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>Noto Serif CJK SC<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">match</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">match</span> <span class="attr">target</span>=<span class="string">&quot;pattern&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;lang&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>zh-tw<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>serif<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;edit name=&quot;family&quot; mode=&quot;prepend&quot; binding=&quot;strong&quot;&gt;</span></span><br><span class="line"><span class="comment">            &lt;string&gt;JetBrainsMonoNL Nerd Font Propo&lt;/string&gt;</span></span><br><span class="line"><span class="comment">        &lt;/edit&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>LXGW WenKai GB Screen<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>Noto Serif CJK TC<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">match</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">match</span> <span class="attr">target</span>=<span class="string">&quot;pattern&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;lang&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>zh-hk<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>serif<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;edit name=&quot;family&quot; mode=&quot;prepend&quot; binding=&quot;strong&quot;&gt;</span></span><br><span class="line"><span class="comment">            &lt;string&gt;JetBrainsMonoNL Nerd Font Propo&lt;/string&gt;</span></span><br><span class="line"><span class="comment">        &lt;/edit&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>LXGW WenKai GB Screen<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>Noto Serif CJK HK<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">match</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">match</span> <span class="attr">target</span>=<span class="string">&quot;pattern&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;lang&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>ja<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>sans-serif<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;edit name=&quot;family&quot; mode=&quot;prepend&quot; binding=&quot;strong&quot;&gt;</span></span><br><span class="line"><span class="comment">            &lt;string&gt;JetBrainsMonoNL Nerd Font Propo&lt;/string&gt;</span></span><br><span class="line"><span class="comment">        &lt;/edit&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>LXGW WenKai GB Screen<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>Noto Sans CJK JP<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">match</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">match</span> <span class="attr">target</span>=<span class="string">&quot;pattern&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;lang&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>ko<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>sans-serif<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;edit name=&quot;family&quot; mode=&quot;prepend&quot; binding=&quot;strong&quot;&gt;</span></span><br><span class="line"><span class="comment">            &lt;string&gt;JetBrainsMonoNL Nerd Font Propo&lt;/string&gt;</span></span><br><span class="line"><span class="comment">        &lt;/edit&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>LXGW WenKai GB Screen<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>Noto Sans CJK KR<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">match</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">match</span> <span class="attr">target</span>=<span class="string">&quot;pattern&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;lang&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>zh-cn<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>sans-serif<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;edit name=&quot;family&quot; mode=&quot;prepend&quot; binding=&quot;strong&quot;&gt;</span></span><br><span class="line"><span class="comment">            &lt;string&gt;JetBrainsMonoNL Nerd Font Propo&lt;/string&gt;</span></span><br><span class="line"><span class="comment">        &lt;/edit&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>LXGW WenKai GB Screen<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>Noto Sans CJK SC<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">match</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">match</span> <span class="attr">target</span>=<span class="string">&quot;pattern&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;lang&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>zh-tw<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>sans-serif<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;edit name=&quot;family&quot; mode=&quot;prepend&quot; binding=&quot;strong&quot;&gt;</span></span><br><span class="line"><span class="comment">            &lt;string&gt;JetBrainsMonoNL Nerd Font Propo&lt;/string&gt;</span></span><br><span class="line"><span class="comment">        &lt;/edit&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>LXGW WenKai GB Screen<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>Noto Sans CJK TC<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">match</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">match</span> <span class="attr">target</span>=<span class="string">&quot;pattern&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;lang&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>zh-hk<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>sans-serif<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;edit name=&quot;family&quot; mode=&quot;prepend&quot; binding=&quot;strong&quot;&gt;</span></span><br><span class="line"><span class="comment">            &lt;string&gt;JetBrainsMonoNL Nerd Font Propo&lt;/string&gt;</span></span><br><span class="line"><span class="comment">        &lt;/edit&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>LXGW WenKai GB Screen<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>Noto Sans CJK HK<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">match</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">match</span> <span class="attr">target</span>=<span class="string">&quot;pattern&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;lang&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>ja<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>monospace<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;edit name=&quot;family&quot; mode=&quot;prepend&quot; binding=&quot;strong&quot;&gt;</span></span><br><span class="line"><span class="comment">            &lt;string&gt;JetBrainsMonoNL Nerd Font Mono&lt;/string&gt;</span></span><br><span class="line"><span class="comment">        &lt;/edit&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>LXGW WenKai Mono GB Screen<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>Noto Sans Mono CJK JP<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">match</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">match</span> <span class="attr">target</span>=<span class="string">&quot;pattern&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;lang&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>ko<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>monospace<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;edit name=&quot;family&quot; mode=&quot;prepend&quot; binding=&quot;strong&quot;&gt;</span></span><br><span class="line"><span class="comment">            &lt;string&gt;JetBrainsMonoNL Nerd Font Mono&lt;/string&gt;</span></span><br><span class="line"><span class="comment">        &lt;/edit&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>LXGW WenKai Mono GB Screen<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>Noto Sans Mono CJK KR<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">match</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">match</span> <span class="attr">target</span>=<span class="string">&quot;pattern&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;lang&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>zh-cn<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>monospace<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;edit name=&quot;family&quot; mode=&quot;prepend&quot; binding=&quot;strong&quot;&gt;</span></span><br><span class="line"><span class="comment">            &lt;string&gt;JetBrainsMonoNL Nerd Font Mono&lt;/string&gt;</span></span><br><span class="line"><span class="comment">        &lt;/edit&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>LXGW WenKai Mono GB Screen<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>Noto Sans Mono CJK SC<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">match</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">match</span> <span class="attr">target</span>=<span class="string">&quot;pattern&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;lang&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>zh-tw<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>monospace<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;edit name=&quot;family&quot; mode=&quot;prepend&quot; binding=&quot;strong&quot;&gt;</span></span><br><span class="line"><span class="comment">            &lt;string&gt;JetBrainsMonoNL Nerd Font Mono&lt;/string&gt;</span></span><br><span class="line"><span class="comment">        &lt;/edit&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>LXGW WenKai Mono GB Screen<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>Noto Sans Mono CJK TC<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">match</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">match</span> <span class="attr">target</span>=<span class="string">&quot;pattern&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;lang&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>zh-hk<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>monospace<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;edit name=&quot;family&quot; mode=&quot;prepend&quot; binding=&quot;strong&quot;&gt;</span></span><br><span class="line"><span class="comment">            &lt;string&gt;JetBrainsMonoNL Nerd Font Mono&lt;/string&gt;</span></span><br><span class="line"><span class="comment">        &lt;/edit&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>LXGW WenKai Mono GB Screen<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">edit</span> <span class="attr">name</span>=<span class="string">&quot;family&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;prepend&quot;</span> <span class="attr">binding</span>=<span class="string">&quot;strong&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>Noto Sans Mono CJK HK<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">edit</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">match</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">fontconfig</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>安装显示驱动</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau</span><br></pre></td></tr></table></figure>
+
+<p>重启，登录后输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hyprland</span><br></pre></td></tr></table></figure>
+
+<p>进入hyprland </p>
+<p>基础安装就完成了</p>
 
   </div>
   
@@ -2706,10 +3010,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-03-22T20:36:34+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-05-30T20:42:52+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2024年3月22日</p>
+    <p>更新于：2024年5月30日</p>
   </a>
 </div>
 
@@ -2717,10 +3021,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/Android/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Android</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/redmi-k20-pro/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>redmi k20 pro</p></a></div>
-  <span hidden itemprop="keywords">Android redmi k20 pro</span>
-
 
         
       
@@ -2732,7 +3032,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ulua3809.github.io/2024/03/22/k20p-unlock-lteband/&title=[转] 红米k20 pro 解锁全频段 - Ulua 3809 's blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ulua3809.github.io/2024/03/30/archlinux-hyperland-install/&title=ArchLinux + Hyprland 基础安装教程 - Ulua 3809 's blog&summary="
           
           >
           
@@ -2744,7 +3044,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ulua3809.github.io/2024/03/22/k20p-unlock-lteband/&title=[转] 红米k20 pro 解锁全频段 - Ulua 3809 's blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ulua3809.github.io/2024/03/30/archlinux-hyperland-install/&title=ArchLinux + Hyprland 基础安装教程 - Ulua 3809 's blog&summary="
           
           >
           
@@ -2756,7 +3056,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ulua3809.github.io/2024/03/22/k20p-unlock-lteband/&title=[转] 红米k20 pro 解锁全频段 - Ulua 3809 's blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ulua3809.github.io/2024/03/30/archlinux-hyperland-install/&title=ArchLinux + Hyprland 基础安装教程 - Ulua 3809 's blog&summary="
           
           >
           
@@ -2781,13 +3081,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：449 字</p>
+      <p>字数：5.3k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1 分钟</p>
+      <p>时长：28 分钟</p>
     </a>
   </div>
 
@@ -2807,25 +3107,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='../../30/archlinux-hyperland-install/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>ArchLinux + Hyprland 基础安装教程</p>
-          <p class='content'>0. 准备设备
-一个&gt;&#x3D;4g，质量好点的U盘
-一台要安装archLinux的电脑
-一台用来看教程，ssh连接的电脑（可选）
-
-1. 准备安装镜像去archlinux官网下载镜像，...</p>
-        </a>
       
-      
-        <a class='next' href='../../../01/06/Insyde-Heal/'>
-          <p class='title'>联想Insylde Bios机型bios U盘救砖<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>Insylde Bios U盘救砖(适用联想的机器)需要的东西：
-使用了Insylde(系微)Bios的电脑
-电脑处于半砖状态
-另一台好的电脑
-原装AC适配器(救砖的过程中需要一直插着电)
-一个...</p>
+        <a class='next' href='../../22/k20p-unlock-lteband/'>
+          <p class='title'>[转] 红米k20 pro 解锁全频段<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>手机开启diag端口已经root打开USB调试，打开cmd（默认你的电脑安装了adb和fastboot），手机已经root，输入 
+1234adb shellsusys.usb.config d...</p>
         </a>
       
     </div>
@@ -2982,7 +3268,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%8B%E6%9C%BA%E5%BC%80%E5%90%AFdiag%E7%AB%AF%E5%8F%A3"><span class="toc-text">手机开启diag端口</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%B2%E7%BB%8Froot"><span class="toc-text">已经root</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B2%A1%E6%9C%89root%EF%BC%88%E4%BD%9C%E8%80%85%E8%A1%A5%E5%85%85%EF%BC%89"><span class="toc-text">没有root（作者补充）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E9%A9%B1%E5%8A%A8"><span class="toc-text">电脑安装驱动</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#QXDM%E8%A7%A3%E9%94%81%E9%A2%91%E6%AE%B5"><span class="toc-text">QXDM解锁频段</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97"><span class="toc-text">数值计算</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-%E5%87%86%E5%A4%87%E8%AE%BE%E5%A4%87"><span class="toc-text">0. 准备设备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%87%86%E5%A4%87%E5%AE%89%E8%A3%85%E9%95%9C%E5%83%8F"><span class="toc-text">1. 准备安装镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%A0%A1%E9%AA%8C%E5%AE%89%E8%A3%85%E9%95%9C%E5%83%8F"><span class="toc-text">1. 校验安装镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Linux%E4%B8%8B%E6%A0%A1%E9%AA%8C%E5%AE%89%E8%A3%85%E9%95%9C%E5%83%8F"><span class="toc-text">1. Linux下校验安装镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-windows%E4%B8%8B%E6%A0%A1%E9%AA%8C%E5%AE%89%E8%A3%85%E9%95%9C%E5%83%8F"><span class="toc-text">2. windows下校验安装镜像</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%90%AF%E5%8A%A8archlivecd"><span class="toc-text">2. 启动archlivecd</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%87%86%E5%A4%87%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="toc-text">2. 准备安装环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E5%85%B3%E9%97%ADTTY%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E5%A3%B0%E9%9F%B3"><span class="toc-text">0. 关闭TTY自动补全声音</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C"><span class="toc-text">1. 配置网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9C%89%E7%BA%BF%E8%BF%9E%E6%8E%A5"><span class="toc-text">1. 有线连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%97%A0%E7%BA%BF%E8%BF%9E%E6%8E%A5"><span class="toc-text">2. 无线连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AEssh%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-text">2. 配置ssh（可选）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4"><span class="toc-text">3. 更新系统时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA"><span class="toc-text">4. 磁盘分区</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8fdisk-%E5%88%86%E5%8C%BA-%E6%8E%A8%E8%8D%90%E6%8F%90%E5%89%8D%E7%94%A8diskgenius%E5%88%86%E5%A5%BD%E5%8C%BA"><span class="toc-text">1. 使用fdisk 分区(推荐提前用diskgenius分好区)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%88%86%E5%8C%BA"><span class="toc-text">2. 格式化分区</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%A0%BC%E5%BC%8F%E5%8C%96btrfs"><span class="toc-text">1. 格式化btrfs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BAbtrfs%E5%AD%90%E5%8D%B7"><span class="toc-text">2. 创建btrfs子卷</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%A0%BC%E5%BC%8F%E5%8C%96EFI%E5%90%AF%E5%8A%A8%E5%88%86%E5%8C%BA"><span class="toc-text">3. 格式化EFI启动分区</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA"><span class="toc-text">3. 挂载分区</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85"><span class="toc-text">3. 开始安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9B%B4%E6%96%B0%E9%95%9C%E5%83%8F%E6%BA%90"><span class="toc-text">1. 更新镜像源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8pacstrap%E5%AE%89%E8%A3%85%E5%9F%BA%E7%A1%80%E5%8C%85"><span class="toc-text">2. 使用pacstrap安装基础包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%94%9F%E6%88%90fstab"><span class="toc-text">3. 生成fstab</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-chroot%E8%BF%9B%E6%96%B0%E7%B3%BB%E7%BB%9F"><span class="toc-text">4. chroot进新系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%AE%BE%E7%BD%AE%E6%97%B6%E5%8C%BA"><span class="toc-text">1. 设置时区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%90%8C%E6%AD%A5BIOS%E6%97%B6%E9%92%9F"><span class="toc-text">2. 同步BIOS时钟</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AE%E5%8C%BA%E5%9F%9F"><span class="toc-text">3. 配置区域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E8%AE%BE%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="toc-text">4. 设置主机名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%B7%BB%E5%8A%A0archLinuxcn%E6%BA%90"><span class="toc-text">5. 添加archLinuxcn源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E5%AE%89%E8%A3%85%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6"><span class="toc-text">6. 安装基础软件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E5%AE%89%E8%A3%85bootloader"><span class="toc-text">7. 安装bootloader</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-%E9%85%8D%E7%BD%AEzsh"><span class="toc-text">9. 配置zsh</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%AE%89%E8%A3%85hyprland"><span class="toc-text">4. 安装hyprland</span></a></li></ol>
     </div>
   </section>
 
@@ -3961,7 +4247,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Ulua 3809 's blog","url":"https://ulua3809.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Ulua 3809","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://ulua3809.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Ulua 3809 little blog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://ulua3809.github.io/","name":"Ulua 3809 's blog"}},{"@type":"ListItem","position":2,"item":{"@id":"https://ulua3809.github.io/categories/手机折腾/","name":"手机折腾"}},{"@type":"ListItem","position":3,"item":{"@id":"https://ulua3809.github.io/2024/03/22/k20p-unlock-lteband/","name":"[转] 红米k20 pro 解锁全频段"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Ulua 3809 's blog","url":"https://ulua3809.github.io/","keywords":null,"description":"Ulua 3809 little blog","author":{"@type":"Person","name":"Ulua 3809","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://ulua3809.github.io/","description":"Ulua 3809 little blog"},"publisher":{"@type":"Organization","name":"Ulua 3809 's blog","url":"https://ulua3809.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://ulua3809.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"[转] 红米k20 pro 解锁全频段","description":"Ulua 3809 little blog","inLanguage":["zh-CN","zh-HK","zh-TW","en","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://ulua3809.github.io/2024/03/22/k20p-unlock-lteband/"},"author":{"@type":"Person","name":"Ulua 3809","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://ulua3809.github.io/"},"publisher":{"@type":"Organization","name":"Ulua 3809 's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://ulua3809.github.io/2024/03/22/k20p-unlock-lteband/","wordCount":0,"datePublished":"2024-03-22T11:38:11.000Z","dateModified":"2024-03-22T12:36:34.676Z","articleSection":"手机折腾","keywords":"Android,redmi k20 pro","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Ulua 3809 's blog","url":"https://ulua3809.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Ulua 3809","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://ulua3809.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Ulua 3809 little blog"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://ulua3809.github.io/","name":"Ulua 3809 's blog"}},{"@type":"ListItem","position":3,"item":{"@id":"https://ulua3809.github.io/2024/03/30/archlinux-hyperland-install/","name":"ArchLinux + Hyprland 基础安装教程"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Ulua 3809 's blog","url":"https://ulua3809.github.io/","keywords":null,"description":"Ulua 3809 little blog","author":{"@type":"Person","name":"Ulua 3809","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://ulua3809.github.io/","description":"Ulua 3809 little blog"},"publisher":{"@type":"Organization","name":"Ulua 3809 's blog","url":"https://ulua3809.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://ulua3809.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"ArchLinux + Hyprland 基础安装教程","description":"Ulua 3809 little blog","inLanguage":["zh-CN","zh-HK","zh-TW","en","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://ulua3809.github.io/2024/03/30/archlinux-hyperland-install/"},"author":{"@type":"Person","name":"Ulua 3809","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://ulua3809.github.io/"},"publisher":{"@type":"Organization","name":"Ulua 3809 's blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://ulua3809.github.io/2024/03/30/archlinux-hyperland-install/","wordCount":0,"datePublished":"2024-03-30T06:53:27.000Z","dateModified":"2024-05-30T12:42:52.000Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
